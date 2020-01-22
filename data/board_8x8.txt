@@ -1,0 +1,17 @@
+# O - Orange
+# B - Blue
+# P - Purple
+# I - pInk
+# Y - Yellow
+# R - Red
+# G - Green
+# N - browN
+
+OBPIYRGN
+ROIGBYNP
+GIORPNYB
+IPBONGRY
+YRGNOBPI
+BYNPROIG
+PNYBGIOR
+NGRYIPBO
