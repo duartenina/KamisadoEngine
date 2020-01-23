@@ -1,7 +1,7 @@
 @startuml
-class Board {
-    Tile[] tiles
-    Piece[] pieces
+class game.Board {
+    game.Tile[] tiles
+    game.Piece[] pieces
 }
-class Tile
+class game.Tile
 @enduml
