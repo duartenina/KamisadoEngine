@@ -1,0 +1,7 @@
+@startuml
+class Board {
+    Tile[] tiles
+    Piece[] pieces
+}
+class Tile
+@enduml
