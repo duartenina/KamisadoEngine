@@ -1,0 +1,29 @@
+# O - Orange
+# B - Blue
+# P - Purple
+# I - pInk
+# Y - Yellow
+# R - Red
+# G - Green
+# N - browN
+
+# O,B,P,I,Y,R,G,N last line
+# N,G,R,Y,I,P,B,O first line
+
+a1
+b1
+c1
+d1
+e1
+f1
+g1
+h1
+
+a8
+b8
+c8
+d8
+e8
+f8
+g8
+h8
