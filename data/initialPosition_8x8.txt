@@ -10,20 +10,20 @@
 # O,B,P,I,Y,R,G,N last line
 # N,G,R,Y,I,P,B,O first line
 
-a1
-b1
-c1
-d1
-e1
-f1
-g1
-h1
+a1 K N
+b1 K G
+c1 K R
+d1 K Y
+e1 K I
+f1 K P
+g1 K B
+h1 K O
 
-a8
-b8
-c8
-d8
-e8
-f8
-g8
-h8
+a8 W O
+b8 W B
+c8 W P
+d8 W I
+e8 W Y
+f8 W R
+g8 W G
+h8 W N
