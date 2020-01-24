@@ -17,6 +17,10 @@ public class Board {
         return tiles[y][x];
     }
 
+    public Tile[][] getTiles() {
+        return tiles;
+    }
+
     public Board(int size) throws IOException {
         if (size == 8) { //TO DO: generalize for any size
             tiles = load_board_txt("data/board_8x8.txt");
@@ -25,6 +29,9 @@ public class Board {
         else {
             throw new ArrayIndexOutOfBoundsException();
         }
+
+        boardSize = size;
+
         for(int i = 0; i<size; i++){
             for(int j = 0; j<size; j++){
                 System.out.print(tiles[i][j]);

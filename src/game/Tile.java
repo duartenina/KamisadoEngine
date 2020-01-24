@@ -17,8 +17,8 @@ public class Tile {
         //System.out.println("Constructed!");
     }
 
-    public char getColor(){
-        return this.color;
+    public char getColor() {
+        return color;
     }
 
     public void setColor(char color) {
