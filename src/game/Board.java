@@ -1,6 +1,5 @@
 package game;
 
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -32,6 +31,19 @@ public class Board {
 
     public Tile[][] getTiles() {
         return tiles;
+    }
+
+    public Piece getPiece(char input_player, char input_color) {
+        for (Piece[] player : pieces) {
+            if (player[0].getPlayer() == input_player) {
+                for (Piece color : player) {
+                    if (color.getColor() == input_color)
+                        return color;
+                }
+            }
+        }
+        System.out.println("Error - no valid piece. Empty new piece returned.");
+        return new Piece('\0','\0'); //null chars
     }
 
     @Override
