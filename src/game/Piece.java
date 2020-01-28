@@ -92,21 +92,48 @@ public class Piece {
         return output;
     }
 
-    /*
+
     public ArrayList<String> getPossibleMoves(Board board) {
-        ArrayList<String> moveList = new ArrayList<String>(0);
-        int[] currentPosition = this.place.getPosition();
-        int move;
-        if(this.player == 'W') move = +1;
-        else if(this.player == 'K') move = -1;
+        ArrayList<String> move_List = new ArrayList<>(0);
+        int[] current_Position = this.place.getPosition();
+        int direction;
+        if(this.player == 'W') direction = -1;
+        else if(this.player == 'K') direction = +1;
         else{
+            direction = 0;
             System.out.println("Error - No valid player found.");
             System.exit(-1);
         }
 
+
+        int y_init = current_Position[0], x_init = current_Position[1];
+        //System.out.println(y_init + " " + direction);
+        for(int y = y_init+direction; 0 <= y && y < 8; y+=direction){
+            //System.out.println(y);
+            int delta_move = Math.abs(y-y_init);
+            boolean[] blocked = {false,false,false};
+            int[] x_arr = {x_init-delta_move, x_init, x_init+delta_move};
+            int row = 0;
+            for (int x:x_arr) {
+                //System.out.println(y + " " + x);
+                if (0 <= x && x < 8 && !blocked[row]) {
+                    if (board.OccupationChar()[y][x] == '.') {
+                        char rowchar = (char) (x + 'a');
+                        String move = String.valueOf(rowchar) + (y+1);
+                        move_List.add(move);
+                    }
+                    else{
+                        blocked[row] = true;
+                    }
+                row++;
+                }
+            }
+        }
+        /*for (String move:move_List){
+            System.out.println(move);
+        }*/
         board.OccupationChar();
-        return moveList;
+        return move_List;
     }
-    */
 
 }
