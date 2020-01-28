@@ -22,6 +22,7 @@ public class Piece {
     }
 
     public Piece(char color, char player, Tile place) {
+<<<<<<< HEAD
 
         if(place.isOccupied() ) {
             System.out.println("Error - Tile already occupied. Cannot set piece.");
@@ -40,6 +41,19 @@ public class Piece {
         this.place = null;
     }
 
+=======
+        this.color = color;
+        this.player = player;
+        this.place = place;
+    }
+
+    public Piece(char color, char player) {
+        this.color = color;
+        this.player = player;
+        this.place = null;
+    }
+
+>>>>>>> f8bf52edcc46f2a5f09b17887f9fa712ca01d5c6
     static Piece[][] setPosition(Board board, String filename) throws IOException{
         int size = board.getBoardSize();
         Piece[][] output = new Piece[2][size];
@@ -60,6 +74,7 @@ public class Piece {
 
             Tile tile = board.getTileAt(coord);
             Piece piece = new Piece(color, player, tile);
+<<<<<<< HEAD
 
             if (player == 'W') {
                 if (whiteCount >= size) {
@@ -107,5 +122,37 @@ public class Piece {
         return moveList;
     }
     */
+=======
+
+            if (player == 'W') {
+                if (whiteCount >= size) {
+                    System.out.println("too many white pieces");
+                    continue;
+                }
+                output[board.WHITE][whiteCount] = piece;
+                whiteCount++;
+            }
+            else {
+                if (blackCount >= size) {
+                    System.out.println("too many black pieces");
+                    continue;
+                }
+                output[board.BLACK][blackCount] = piece;
+                blackCount++;
+            }
+        }
+
+        if (whiteCount < size) { // Not enough pieces
+            System.out.println("not enough white pieces");
+            // ERROR
+        }
+        if (blackCount < size) { // Not enough pieces
+            System.out.println("not enough black pieces");
+            // ERROR
+        }
+
+        return output;
+    }
+>>>>>>> f8bf52edcc46f2a5f09b17887f9fa712ca01d5c6
 
 }

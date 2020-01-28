@@ -6,9 +6,15 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Board {
+<<<<<<< HEAD
     private final int boardSize;
     private final Tile[][] tiles;
     private final Piece[][] pieces;
+=======
+    private int boardSize;
+    private Tile[][] tiles;
+    private Piece[][] pieces;
+>>>>>>> f8bf52edcc46f2a5f09b17887f9fa712ca01d5c6
 
     public int WHITE=0, BLACK=1;
 
@@ -42,6 +48,20 @@ public class Board {
                 str.append(tiles[i][j]);
             }
             str.append("\n");
+<<<<<<< HEAD
+=======
+        }
+
+        return str.toString();
+    }
+
+    public Board(int size) throws IOException {
+        boardSize = size;
+
+        if (boardSize == 8) { //TO DO: generalize for any size
+            tiles = load_board_txt("data/board_8x8.txt");
+            pieces = Piece.setPosition(this, "data/initialPosition_8x8.txt");
+>>>>>>> f8bf52edcc46f2a5f09b17887f9fa712ca01d5c6
         }
 
         return str.toString();
@@ -68,6 +88,7 @@ public class Board {
             }
             str.append("\n");
         }
+<<<<<<< HEAD
 
         return str.toString();
     }
@@ -95,6 +116,9 @@ public class Board {
             throw new ArrayIndexOutOfBoundsException();
         }
         //System.out.println(this);
+=======
+        System.out.println(this);
+>>>>>>> f8bf52edcc46f2a5f09b17887f9fa712ca01d5c6
     }
 
     protected Tile[][] load_board_txt(String filename) throws IOException {
