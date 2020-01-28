@@ -6,15 +6,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Board {
-<<<<<<< HEAD
     private final int boardSize;
     private final Tile[][] tiles;
     private final Piece[][] pieces;
-=======
-    private int boardSize;
-    private Tile[][] tiles;
-    private Piece[][] pieces;
->>>>>>> f8bf52edcc46f2a5f09b17887f9fa712ca01d5c6
 
     public int WHITE=0, BLACK=1;
 
@@ -48,8 +42,6 @@ public class Board {
                 str.append(tiles[i][j]);
             }
             str.append("\n");
-<<<<<<< HEAD
-=======
         }
 
         return str.toString();
@@ -61,35 +53,32 @@ public class Board {
         if (boardSize == 8) { //TO DO: generalize for any size
             tiles = load_board_txt("data/board_8x8.txt");
             pieces = Piece.setPosition(this, "data/initialPosition_8x8.txt");
->>>>>>> f8bf52edcc46f2a5f09b17887f9fa712ca01d5c6
         }
-
-        return str.toString();
+        else{
+            throw new ArrayIndexOutOfBoundsException();
+        }
     }
 
     public String OccupancyString() {
         StringBuilder str = new StringBuilder();
-        for(int i = 0 ; i < boardSize ; i++){
-            for(int j = 0 ; j < boardSize ; j++){
-                if(tiles[i][j].isOccupied() ) {
-                    for(Piece[] player_Piece : pieces) {
-                        for(Piece piece : player_Piece) {
+        for (int i = 0; i < boardSize; i++) {
+            for (int j = 0; j < boardSize; j++) {
+                if (tiles[i][j].isOccupied()) {
+                    for (Piece[] player_Piece : pieces) {
+                        for (Piece piece : player_Piece) {
                             if ((i == piece.getPlace().getPosition()[0]) &&
-                                (j == piece.getPlace().getPosition()[1])) {
-                                char toPrint = (char)(piece.getColor() + 32*(piece.getPlayer() == 'K'? 1:0));
+                                    (j == piece.getPlace().getPosition()[1])) {
+                                char toPrint = (char) (piece.getColor() + 32 * (piece.getPlayer() == 'K' ? 1 : 0));
                                 str.append(toPrint);
                             }
                         }
                     }
-                }
-                else{
+                } else {
                     str.append(".");
                 }
             }
             str.append("\n");
         }
-<<<<<<< HEAD
-
         return str.toString();
     }
 
@@ -105,21 +94,6 @@ public class Board {
         return outputCharArray;
     }
 
-    public Board(int size) throws IOException {
-        boardSize = size;
-
-        if (boardSize == 8) { //TO DO: generalize for any size
-            tiles = load_board_txt("data/board_8x8.txt");
-            pieces = Piece.setPosition(this, "data/initialPosition_8x8.txt");
-        }
-        else {
-            throw new ArrayIndexOutOfBoundsException();
-        }
-        //System.out.println(this);
-=======
-        System.out.println(this);
->>>>>>> f8bf52edcc46f2a5f09b17887f9fa712ca01d5c6
-    }
 
     protected Tile[][] load_board_txt(String filename) throws IOException {
         String data = new String(Files.readAllBytes(Paths.get(filename)));
