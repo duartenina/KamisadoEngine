@@ -21,6 +21,39 @@ public class Piece {
         return place;
     }
 
+    public void setPlace(Board board, int[] new_position){//working on it now
+        boolean move_in_movelist = false;
+
+        ArrayList<String> possibleMoves = getPossibleMoves(board);
+
+        //char[] position = {(char)(new_position[0]+'a'),(char)('1' + new_position[1])};
+        //System.out.println("Want to go to:  " + (char)(position[0]) + position[1]);
+        for(String move:possibleMoves){
+            int[] coord_values = {move.charAt(0)-'a',move.charAt(1)-'1'};
+            if (Arrays.equals(coord_values,new_position) ){
+                move_in_movelist = true;
+                break;
+            }
+        }
+
+        if (move_in_movelist) {
+            place.setOccupied(false);
+            place = board.getTileAt(new_position[1], new_position[0]);
+            //System.out.println("Went to:  " + position[0] +""+ position[1]);
+            place.setOccupied(true);
+
+        }
+        else{
+            System.out.println("Cannot move to " + (char)(new_position[0]+'a') + (new_position[1]+1));
+            if(board.getTileAt(new_position[1], new_position[0]).isOccupied())
+                System.out.println("Tile has another piece.");
+        }
+    }
+
+    public void setPlace(Board board, String new_position) {//working on it now
+        setPlace(board,new int[] {new_position.charAt(0)-'a',new_position.charAt(1)-'1'});
+    }
+
     public Piece(char color, char player, Tile place) {
 
         if(place.isOccupied() ) {
@@ -132,7 +165,7 @@ public class Piece {
         /*for (String move:move_List){
             System.out.println(move);
         }*/
-        board.OccupationChar();
+
         return move_List;
     }
 

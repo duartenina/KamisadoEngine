@@ -1,8 +1,8 @@
 import game.Board;
-import game.*;
+//import game.*;
 
 import java.io.*;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Main {
 
@@ -11,18 +11,20 @@ public class Main {
 
         try {
             Board board = new Board(8);
+
+            System.out.println();
             System.out.print(board.OccupancyString());
+            System.out.println();
+            //board.getPiece('W','Y').setPlace(board, new int[]{6, 4});
 
-            /*
-            //This can be used to test Piece.getPossibleMoves;
-            Piece test = board.getPiece('W','Y');
 
-            System.out.println("Piece position: " + (char)('a'+test.getPlace().getPosition()[1])+ (test.getPlace().getPosition()[0]+1));
-            ArrayList<String> moveList = test.getPossibleMoves(board);
-            for(String move:moveList){
-                System.out.println(move);
-            }
-            */
+            board.getPiece('K','Y').setPlace(board, "g4");
+            board.getPiece('W','P').setPlace(board, new int[]{5, 4});
+            System.out.println();
+            System.out.print(board.OccupancyString());
+            System.out.println();
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
