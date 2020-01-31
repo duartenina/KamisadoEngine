@@ -39,7 +39,7 @@ public class Tile {
         return position;
     }
 
-    public void setPosition(int[] position) {
+    /*public void setPosition(int[] position) {
         this.position = position;
-    }
+    }*/
 }

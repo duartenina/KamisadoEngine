@@ -13,7 +13,7 @@ public class Main {
             Board board = new Board(8);
 
             System.out.println();
-            System.out.print(board.OccupancyString());
+            System.out.print(board.occupancyString());
             System.out.println();
             //board.getPiece('W','Y').setPlace(board, new int[]{6, 4});
 
@@ -21,7 +21,7 @@ public class Main {
             board.getPiece('K','Y').setPlace(board, "g4");
             board.getPiece('W','P').setPlace(board, new int[]{5, 4});
             System.out.println();
-            System.out.print(board.OccupancyString());
+            System.out.print(board.occupancyString());
             System.out.println();
 
 

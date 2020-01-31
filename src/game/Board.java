@@ -71,7 +71,7 @@ public class Board {
         }
     }
 
-    public String OccupancyString() {
+    public String occupancyString() {
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
@@ -94,9 +94,9 @@ public class Board {
         return str.toString();
     }
 
-    public char[][] OccupationChar(){
+    public char[][] occupationChar(){
         //this can be made to work better but it's ok for now
-        String[] boardArray = this.OccupancyString().split("\\r?\\n");
+        String[] boardArray = this.occupancyString().split("\\r?\\n");
         char[][] outputCharArray = new char[boardArray.length] [];
         int index = 0;
         for (String subboard:boardArray){
